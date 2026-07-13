@@ -4,7 +4,7 @@ export default {
       <p class="eyebrow">Core Concepts</p>
       <h1>main.js vs app.js</h1>
       <p class="lede">
-        collie.js reserves the entry-point filename to signal what kind of
+        collie-js reserves the entry-point filename to signal what kind of
         project you're looking at — before you've opened a single line of
         code.
       </p>
@@ -26,7 +26,7 @@ export default {
       </table>
 
       <p>
-        This is a naming convention, not something collie.js enforces at
+        This is a naming convention, not something collie-js enforces at
         runtime — nothing breaks if you name it differently. The value is
         purely for anyone (including future you) scanning a project's file
         tree: seeing <code>app.js</code> at the bottom of <code>body</code>

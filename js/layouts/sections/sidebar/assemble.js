@@ -6,7 +6,7 @@ export default {
     <div class="brand">
       ${icons.paw}
       <div>
-        <h1>collie<span class="light">.js</span></h1>
+        <h1>collie<span class="light">-js</span></h1>
         <p class="tagline">no build step. no framework. no ceremony.</p>
       </div>
     </div>

@@ -14,18 +14,20 @@ export default {
 
       ${CodeBlock({
         id: "assemble-tree",
-        code: `layouts/
-  scrollArea/
-    assemble.js          ← imports and composes every section below
-    components/
-      ProjectCard.js
-      Header.js
-    sections/
-      About/
-        assemble.js      ← this section's own UI + logic
-      Work/
-        assemble.js`
-      })}
+        code: 
+`layouts/
+  ├── assemble js      ← imports and composes every section
+  ├── components/
+  │   ├── ProjectCard.js
+  │   └── Header.js
+  │
+  └── sections/
+      ├── About/
+      │   └── assemble.js      ← this section's own UI + logic
+      │
+      └── Work/
+          └── assemble.js      ← this section's own UI + logic`
+    })}
 
       <p>
         A parent's <code>assemble.js</code> imports each child's
@@ -35,10 +37,10 @@ export default {
       </p>
 
       ${CodeBlock({
-        filename: "scrollArea/assemble.js",
+        filename: "layouts/assemble.js",
         id: "assemble-parent",
         code: `import About from "./sections/About/assemble.js";
-import Work from "./sections/Work/assemble.js";
+ import Work from "./sections/Work/assemble.js";
 
 export default {
   UI: (\`

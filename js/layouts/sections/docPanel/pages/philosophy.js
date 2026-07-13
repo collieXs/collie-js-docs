@@ -4,7 +4,7 @@ export default {
       <p class="eyebrow">Getting Started</p>
       <h1>Philosophy</h1>
       <p class="lede">
-        Three rules collie.js won't break, and why.
+        Three rules collie-js won't break, and why.
       </p>
 
       <div class="principle">
@@ -15,7 +15,7 @@ export default {
           className shortcut. <code>tE()</code> is
           <code>querySelector</code> with a console warning if it comes back
           empty. Nothing is hidden behind magic — you could rewrite any
-          collie.js app in raw DOM calls and get the same behavior, just with
+          collie-js app in raw DOM calls and get the same behavior, just with
           more typing.
         </p>
       </div>
@@ -41,7 +41,7 @@ export default {
         </p>
       </div>
 
-      <h2>What collie.js is not</h2>
+      <h2>What collie-js is not</h2>
       <p>
         It's not reactive — there's no virtual DOM, no dependency tracking, no
         automatic re-render when state changes. <code>createState()</code>

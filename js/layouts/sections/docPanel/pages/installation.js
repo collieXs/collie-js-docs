@@ -24,10 +24,10 @@ cd my-project`
       ${CodeBlock({
         id: "install-tree",
         code: `project-root/
-├── assets/
-│   ├── fonts/
-│   ├── images/
-│   └── sounds/
+├── assets/                     # optinal
+│   ├── fonts/                  # holds fonts file
+│   ├── images/                 # holds images
+│   └── sounds/                 # holds both audio and video
 │
 ├── js/
 │   ├── collie/                  # the library itself
@@ -37,11 +37,10 @@ cd my-project`
 │   │
 │   ├── layouts/
 │   │   ├── components/          # PascalCase — functional components shared across ALL sections
-│   │   │
 │   │   └── sections/            # PascalCase or any case — one object component per folder
 │   │
 │   ├── utils/                   # camelCase — standalone behaviors, not UI (e.g. scrollEffect.js)
-│   └── main.js                  # entry point for a static site — use app.js instead for a PWA
+│   └── main.js                  # entry point for a static site — use app.js instead for a PWA (optional naming )
 │
 ├── scss/                        # mirrors js/ folder-for-folder, file-for-file (optional folder)
 │   ├── layouts/
@@ -51,17 +50,19 @@ cd my-project`
 │   │   └── sections/
 │   │       ├── _assemble.scss   # imports every section's own _assemble.scss
 │   │
-│   ├── others/
-│   │   ├── _reset.scss
-│   │   ├── _variables.scss
-│   │   └── _mixins.scss
+│   ├── utils/                   # optional
+│   │   ├── _reset.scss          # basically for default styling resets
+│   │   ├── _variables.scss      # holds scss variables
+│   │   └── _mixins.scss         # holds scss mixins
 │   │
 │   └── main.scss                # imports utils, components, and sections — compiles to main.min.css
 │
 ├── index.html
 ├── main.min.css
-└── README.md`
-      })}
+└── README.md
+
+Note: folder structure can be set to user's preference.
+`})}
 
       <p>
         The library always loads first, in <code>&lt;head&gt;</code>; your

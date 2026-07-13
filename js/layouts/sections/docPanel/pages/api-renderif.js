@@ -43,7 +43,7 @@ export default {
   logic: () => {
     tE("[data-run='demo-renderif']")?.addEventListener("click", () => {
       const sandbox = tE("[data-sandbox='demo-renderif']");
-      const props = { firstTool: "SCSS", secondTool: "collie.js", thirdTool: undefined };
+      const props = { firstTool: "SCSS", secondTool: "collie-js", thirdTool: undefined };
       sH(sandbox, `
         <div class="tools">
           ${renderIf(props.firstTool, `<p>${props.firstTool}</p>`)}

@@ -7,7 +7,7 @@ export default {
       <p class="eyebrow">API Reference</p>
       <h1><code>customAlert(message, options)</code></h1>
       <p class="lede">
-        collie.js overwrites <code>window.alert</code> with a promise-based,
+        collie-js overwrites <code>window.alert</code> with a promise-based,
         non-blocking replacement. The native one is preserved as
         <code>window.nativeAlert</code>, in case you ever need the real
         thing back.

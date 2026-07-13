@@ -1,5 +1,5 @@
-import Sidebar from "/js/layouts/sidebar/assemble.js";
-import DocPanel from "/js/layouts/docPanel/assemble.js";
+import Sidebar from "/js/layouts/sections/sidebar/assemble.js";
+import DocPanel from "/js/layouts/sections/docPanel/assemble.js";
 
 export default function Layouts() {
   sH(sidebar, Sidebar.UI);

@@ -7,7 +7,7 @@ export default {
       <p class="eyebrow">API Reference</p>
       <h1><code>renderList(array, fn)</code></h1>
       <p class="lede">
-        Maps an array to HTML strings and joins them — the collie.js
+        Maps an array to HTML strings and joins them — the collie-js
         equivalent of <code>.map()</code> + <code>.join('')</code>, with
         warnings if either argument is the wrong type instead of a silent
         <code>undefined</code> in your markup.
