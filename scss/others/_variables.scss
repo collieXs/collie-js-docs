@@ -1,0 +1,26 @@
+// Palette — code-editor dark theme, purpose-built for this brief:
+// a JS component library's docs should look and feel like the editor
+// its readers already live in.
+$bg: #0D0F12;           // page background
+$panel: #15181D;        // sidebar / card surfaces
+$panel-raised: #1B1F26;    // code blocks, inputs
+$border: #262B33;
+
+$text: #D8DEE4;
+$text-muted: #6B7480;
+$text-dim: #444B56;
+
+$accent: #E0A458;        // amber — signature color, like a keyword highlight
+$accent-dim: #8A6B3E;
+$accent-cool: #4FA8A0;      // teal — secondary, like a string highlight
+
+$success: #6FBF7A;
+$danger: #D9705F;
+
+$font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+$font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+$radius-sm: 4px;
+$radius-md: 8px;
+
+$sidebar-width: 280px;

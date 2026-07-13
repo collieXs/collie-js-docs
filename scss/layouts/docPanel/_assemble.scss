@@ -1,0 +1,376 @@
+#doc_panel {
+  article {
+    animation: fade-in 0.25s ease;
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .eyebrow {
+    @include mono-label;
+    margin-bottom: 0.6rem;
+  }
+
+  h1 {
+    font-family: $font-mono;
+    font-size: 2.1rem;
+    font-weight: 600;
+    margin-bottom: 1.1rem;
+
+    code {
+      background: none;
+      padding: 0;
+      color: $accent;
+      font-size: inherit;
+    }
+  }
+
+  h2 {
+    font-family: $font-mono;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 2.4rem 0 0.9rem;
+  }
+
+  h3 {
+    font-family: $font-mono;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    color: $accent;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: $text;
+    margin-bottom: 1rem;
+  }
+
+  .lede {
+    font-size: 1.05rem;
+    color: $text-muted;
+    line-height: 1.7;
+    margin-bottom: 1.8rem;
+  }
+
+  code {
+    font-family: $font-mono;
+    font-size: 0.85em;
+    background: $panel-raised;
+    border: 1px solid $border;
+    padding: 0.1rem 0.35rem;
+    border-radius: $radius-sm;
+    color: $accent-cool;
+  }
+
+  ul.checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1rem 0 1.5rem;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: $text;
+
+      svg {
+        width: 15px;
+        height: 15px;
+        color: $success;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  .next-hint {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid $border;
+    font-size: 0.9rem;
+    color: $text-muted;
+
+    a {
+      color: $accent;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .principle {
+    margin-bottom: 1.8rem;
+    padding-left: 1rem;
+    border-left: 2px solid $border;
+  }
+
+  .callout {
+    background: rgba($accent, 0.06);
+    border: 1px solid rgba($accent, 0.25);
+    border-radius: $radius-md;
+    padding: 1rem 1.2rem;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin: 1.3rem 0;
+    color: $text;
+
+    strong {
+      color: $accent;
+    }
+  }
+
+  // --- tables ---
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0 1.6rem;
+    font-size: 0.85rem;
+
+    th, td {
+      text-align: left;
+      padding: 0.6rem 0.8rem;
+      border-bottom: 1px solid $border;
+    }
+
+    th {
+      @include mono-label;
+      font-size: 0.68rem;
+    }
+
+    td {
+      color: $text;
+
+      code {
+        font-size: 0.82em;
+      }
+    }
+  }
+
+  // --- code blocks ---
+  .code-block {
+    position: relative;
+    background: $panel-raised;
+    border: 1px solid $border;
+    border-radius: $radius-md;
+    margin: 1rem 0 1.6rem;
+    overflow: hidden;
+
+    .code-block-head {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 0.9rem;
+      border-bottom: 1px solid $border;
+      font-size: 0.75rem;
+      color: $text-muted;
+      font-family: $font-mono;
+
+      svg {
+        width: 14px;
+        height: 14px;
+        color: $accent-cool;
+      }
+    }
+
+    pre {
+      padding: 1.1rem 1.2rem;
+      overflow-x: auto;
+      font-size: 0.82rem;
+      line-height: 1.65;
+      color: $text;
+      @include scrollbar-thin;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 0.6rem;
+      right: 0.6rem;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba($panel, 0.7);
+      border: 1px solid $border;
+      border-radius: $radius-sm;
+      color: $text-muted;
+      transition: color 0.15s ease, border-color 0.15s ease;
+
+      &:hover {
+        color: $text;
+        border-color: $text-dim;
+      }
+
+      &.copied {
+        color: $success;
+        border-color: $success;
+      }
+    }
+  }
+
+  // --- live demo ---
+  .live-demo {
+    border: 1px solid rgba($accent-cool, 0.3);
+    border-radius: $radius-md;
+    margin: 1.4rem 0;
+    overflow: hidden;
+
+    .live-demo-head {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 0.9rem;
+      background: rgba($accent-cool, 0.08);
+      font-size: 0.78rem;
+      color: $accent-cool;
+      font-family: $font-mono;
+
+      svg {
+        width: 13px;
+        height: 13px;
+      }
+
+      .run-btn {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: $accent-cool;
+        color: $bg;
+        font-size: 0.78rem;
+        font-weight: 600;
+        padding: 0.3rem 0.75rem;
+        border-radius: $radius-sm;
+        transition: opacity 0.15s ease;
+
+        &:hover {
+          opacity: 0.85;
+        }
+      }
+    }
+
+    .sandbox {
+      padding: 1.4rem;
+      min-height: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.7rem;
+
+      &:empty::before {
+        content: "Press \"Run\" above to see this in action.";
+        font-size: 0.85rem;
+        color: $text-dim;
+        font-style: italic;
+      }
+    }
+  }
+
+  // shared elements rendered *inside* sandboxes by demo logic
+  .demo-btn, .hold-target {
+    background: $accent;
+    color: $bg;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    border-radius: $radius-sm;
+  }
+
+  .hold-target {
+    background: $panel;
+    color: $text;
+    border: 1px dashed $text-dim;
+    user-select: none;
+
+    &.held {
+      background: $accent;
+      color: $bg;
+      border-style: solid;
+    }
+  }
+
+  .badge {
+    background: rgba($accent, 0.15);
+    color: $accent;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+  }
+
+  .demo-list li {
+    padding: 0.2rem 0;
+    font-size: 0.9rem;
+  }
+
+  .demo-input {
+    width: 100%;
+    background: $panel;
+    border: 1px solid $border;
+    border-radius: $radius-sm;
+    padding: 0.5rem 0.7rem;
+    font-size: 0.85rem;
+  }
+
+  .demo-status {
+    font-size: 0.82rem;
+    color: $text-muted;
+    font-family: $font-mono;
+  }
+
+  .demo-count {
+    font-size: 0.95rem;
+
+    strong {
+      color: $accent;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+  }
+
+  .demo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .mini-card {
+    display: block;
+    background: $panel;
+    border: 1px solid $border;
+    border-radius: $radius-sm;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  .alert {
+    background: $panel;
+    border: 1px solid $accent;
+    border-radius: $radius-sm;
+    padding: 0.8rem 1rem;
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    width: 100%;
+
+    button {
+      background: $accent;
+      color: $bg;
+      font-weight: 600;
+      font-size: 0.8rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: $radius-sm;
+      align-self: flex-start;
+      margin-right: 0.5rem;
+    }
+  }
+}

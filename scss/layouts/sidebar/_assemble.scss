@@ -1,0 +1,122 @@
+#sidebar {
+  .brand {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    margin-bottom: 1.5rem;
+
+    svg {
+      width: 26px;
+      height: 26px;
+      color: $accent;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    h1 {
+      font-family: $font-mono;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: $text;
+    }
+
+    .tagline {
+      font-size: 0.72rem;
+      color: $text-muted;
+      margin-top: 0.15rem;
+      line-height: 1.4;
+    }
+  }
+
+  .search {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    background: $panel-raised;
+    border: 1px solid $border;
+    border-radius: $radius-sm;
+    padding: 0.55rem 0.7rem;
+    margin-bottom: 1.5rem;
+
+    svg {
+      width: 15px;
+      height: 15px;
+      color: $text-dim;
+      flex-shrink: 0;
+    }
+
+    input {
+      width: 100%;
+      font-size: 0.85rem;
+      color: $text;
+
+      &::placeholder {
+        color: $text-dim;
+      }
+    }
+  }
+
+  nav {
+    flex: 1;
+  }
+
+  .nav-group {
+    margin-bottom: 1.4rem;
+
+    .group-label {
+      @include mono-label;
+      margin-bottom: 0.5rem;
+      padding: 0 0.6rem;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    a {
+      display: block;
+      font-size: 0.85rem;
+      color: $text-muted;
+      padding: 0.4rem 0.6rem;
+      border-radius: $radius-sm;
+      border-left: 2px solid transparent;
+      transition: color 0.15s ease, background 0.15s ease;
+
+      &:hover {
+        color: $text;
+        background: rgba($text, 0.04);
+      }
+
+      &.active {
+        color: $accent;
+        background: rgba($accent, 0.08);
+        border-left-color: $accent;
+      }
+    }
+  }
+
+  .sidebar-footer {
+    padding-top: 1rem;
+    border-top: 1px solid $border;
+
+    .gh-link {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.78rem;
+      color: $text-muted;
+      padding: 0.4rem 0.6rem;
+
+      svg {
+        width: 17px;
+        height: 17px;
+      }
+
+      &:hover {
+        color: $text;
+      }
+    }
+  }
+}
