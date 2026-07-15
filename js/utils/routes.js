@@ -1,6 +1,7 @@
-// Single source of truth for every doc page: id, sidebar label, and group.
-// Both the Sidebar and the DocPanel read this list, so adding a page here
-// is the only step needed to wire it into nav + routing.
+/*
+  Single source of truth for every doc page: id, sidebar label, and group.
+  Both the Sidebar and the DocPanel read this list, so adding a page here is the only step needed to wire it into nav + routing.
+*/
 
 export default [
   { 

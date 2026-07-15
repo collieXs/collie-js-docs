@@ -24,19 +24,31 @@ function createElement(tagName, className) {
     return null;
   }
   const el = document.createElement(tagName);
-  if (className) el.classList.add(className);
+  if (className) {
+    className.split(' ').forEach(c => el.classList.add(c));
+  }
   return el;
-};
+}
 window.cE = createElement;
 
 
 function createState(initial) {
   let value = initial;
+  const subs = [];
+  
   return {
     get: () => value,
     set: (newVal, callback) => {
       value = newVal;
       if (callback) callback(value);
+      subs.forEach(fn => fn(value));
+    },
+    sub: (fn) => {
+      if (typeof fn !== 'function') {
+        console.warn("createState().sub() expects a function, got:", fn);
+        return;
+      }
+      subs.push(fn);
     }
   }
 };
@@ -46,11 +58,11 @@ window.createState = createState;
 function customAlert(message = '', options = {}) {
   const { type = 'notify', appearIn = document.body, onConfirm, onCancel } = options;
   const timer = type === 'action' ? null : (options.countdown ?? 3) * 1000;
-
+  
   return new Promise((resolve) => {
     const alertBox = createElement('div', 'alert');
     alertBox.textContent = message;
-
+    
     if (type === 'action') {
       const confirmBtn = createElement('button');
       confirmBtn.textContent = 'OK';
@@ -59,7 +71,7 @@ function customAlert(message = '', options = {}) {
         alertBox.remove();
         resolve(true);
       };
-
+      
       const cancelBtn = createElement('button');
       cancelBtn.textContent = 'Cancel';
       cancelBtn.onclick = () => {
@@ -67,12 +79,12 @@ function customAlert(message = '', options = {}) {
         alertBox.remove();
         resolve(false);
       };
-
+      
       alertBox.append(cancelBtn, confirmBtn);
     }
-
+    
     appearIn.prepend(alertBox);
-
+    
     if (timer !== null) {
       setTimeout(() => {
         alertBox?.remove();

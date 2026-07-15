@@ -1,6 +1,8 @@
-// Tiny hash router. Not a collie.js core feature — just a util this docs
-// site builds on top of createState()/addEvent(), the same way any collie
-// app wires its own logic on top of the primitives.
+/* 
+  Tiny hash router. Not a collie-js core feature — just a util this docs
+  site builds on top of createState()/addEvent(), the same way any collie
+  app wires its own logic on top of the primitives.
+*/
 
 const routeState = createState(location.hash.slice(1) || "introduction");
 
